@@ -1,0 +1,114 @@
+<style>
+  hr{
+    margin-top: 5px !important;
+  }
+</style>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1><%= @employee.name %></h1>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="container">
+
+
+      <div class="row">
+        <div class="col-md-2"><b>Employee ID</b></div>
+        <div class="col-md-4"><%= @employee.employee_id %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Department</b></div>
+        <div class="col-md-4"><%= @employee.department %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Keyboard</b></div>
+        <div class="col-md-4"><%= @employee.keyboard %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Extention #</b></div>
+        <div class="col-md-4"><%= @employee.extension %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>LED</b></div>
+        <div class="col-md-4"><%= @employee.led %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>CPU Code</b></div>
+        <div class="col-md-4"><%= @employee.cpu_code %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Mouse Pad</b></div>
+        <div class="col-md-4"><%= @employee.mouse_pad %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>IP Phone</b></div>
+        <div class="col-md-4"><%= @employee.ip_phone %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Headphone</b></div>
+        <div class="col-md-4"><%= @employee.headphone %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>VGA Card</b></div>
+        <div class="col-md-4"><%= @employee.vga_card %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Laptop</b></div>
+        <div class="col-md-4"><%= @employee.laptop %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Camera</b></div>
+        <div class="col-md-4"><%= @employee.camera %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Updated At</b></div>
+        <div class="col-md-4"><%= @employee.updated_at.strftime("%m-%d-%Y") %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Created At</b></div>
+        <div class="col-md-4"><%= @employee.created_at.strftime("%m-%d-%Y") %></div>
+      </div>
+      <hr>
+
+
+
+      <div class="row">
+        <div class="col-md-2"><b>Description</b></div>
+        <div class="col-md-8"><%= simple_format(@employee.description) %></div>
+      </div>
+
+
+
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <%= link_to 'Edit', edit_item_path(@employee), :class => "btn btn-primary" %>
+          <%= link_to 'Delete', @employee, confirm: 'Are you sure?', method: :delete, :class => "btn btn-warning" %>
+          <%= link_to 'Cancel', items_path, :class => "btn btn-danger" %>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>

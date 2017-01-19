@@ -1,0 +1,133 @@
+<div class="form-horizontal">
+  <%= form_for(@employee) do |f| %>
+      <% if @employee.errors.any? %>
+          <div id="error_explanation">
+            <h3><%= pluralize(@employee.errors.count, "error") %> prohibited this item from being saved:</h3>
+
+            <ul>
+              <% @employee.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :name, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :name, class: "form-control" , placeholder: "Ali Arshad" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :employee_id, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.number_field :employee_id, class: "form-control" ,placeholder: "14" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :extention, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.number_field :extension, class: "form-control", placeholder: "121" %>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <%= f.label :led, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :led, class: "form-control" , placeholder: "1 Hp , 1 Samsung" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :cpu_code, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :cpu_code, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :department, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:department, options_for_select([['IT', 'IT'], ['Hedis', 'Hedis'],['Billing','Billing'],['ECL','ECL'],['QC','QC'],['Marketing','Marketing'],['Credentialing','Credentialing'],['Finance','Finance'],['HR','HR']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :mouse, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:mouse, options_for_select([['Dell', 'Dell'], ['HP', 'HP']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :keyboard, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:keyboard, options_for_select([['Dell', 'Dell'], ['HP', 'HP'],['IBM','IBM']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :mouse_pad, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:mouse_pad, options_for_select([['No', 'No'], ['Yes', 'Yes']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ip_phone, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:ip_phone, options_for_select([['No', 'No'], ['GrandStream', 'GrandStream'], ['NEC', 'NEC'], ['D-Link', 'D-Link']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :headphone, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:headphone, options_for_select([['No', 'No'], ['A4Tech', 'A4Tech'], ['Local', 'Local']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :vga_card, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:vga_card, options_for_select([['No', 'No'], ['Yes', 'Yes']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :laptop, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:laptop, options_for_select([['No', 'No'],['HP', 'HP'], ['ACER', 'ACER'], ['TOSHIBA', 'TOSHIBA'], ['ACER', 'ACER']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :camera, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:camera, options_for_select([['No', 'No'], ['Yes', 'Yes']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_area :description, class: "form-control", :rows =>10 %>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-5">
+          <%= f.submit "Create Employee", class: "btn btn-primary" %>
+          <%= link_to 'Cancel', employees_path, :class => "btn btn-danger" %>
+        </div>
+      </div>
+
+  <% end %>
+</div>

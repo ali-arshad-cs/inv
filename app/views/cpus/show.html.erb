@@ -1,0 +1,82 @@
+<style>
+  hr{
+    margin-top: 5px !important;
+  }
+</style>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1>CPU CODE - <%= @cpu.cpu_code %></h1>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="container">
+
+
+      <div class="row">
+        <div class="col-md-2"><b>Hard Disk</b></div>
+        <div class="col-md-4"><%= @cpu.harddisk %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Brand Name</b></div>
+        <div class="col-md-4"><%= @cpu.brand_name %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>CPU Processor</b></div>
+        <div class="col-md-4"><%= @cpu.cpu_processor %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>RAM</b></div>
+        <div class="col-md-4"><%= @cpu.ram %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>CD - ROM</b></div>
+        <div class="col-md-4"><%= @cpu.cd_rom %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>USB Port</b></div>
+        <div class="col-md-4"><%= @cpu.usb_port %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>VGA Card</b></div>
+        <div class="col-md-4"><%= @cpu.vga_card %></div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Updated At</b></div>
+        <div class="col-md-4"><%= @cpu.updated_at.strftime("%m-%d-%Y") %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Created At</b></div>
+        <div class="col-md-4"><%= @cpu.created_at.strftime("%m-%d-%Y") %></div>
+      </div>
+      <hr>
+
+
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <%= link_to 'Edit', edit_cpu_path(@cpu), :class => "btn btn-primary" %>
+          <%= link_to 'Delete', @cpu, confirm: 'Are you sure?', method: :delete, :class => "btn btn-warning" %>
+          <%= link_to 'Cancel', cpu_path, :class => "btn btn-danger" %>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>

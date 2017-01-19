@@ -1,0 +1,81 @@
+<div class="form-horizontal">
+  <%= form_for(@cpu) do |f| %>
+      <% if @cpu.errors.any? %>
+          <div id="error_explanation">
+            <h3><%= pluralize(@cpu.errors.count, "error") %> prohibited this item from being saved:</h3>
+
+            <ul>
+              <% @cpu.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :cpu_code, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.number_field :cpu_code, class: "form-control", placeholder: "5986" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :harddisk, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:harddisk, options_for_select([['40 GB', '40 GB'], ['80 GB', '80 GB'], ['120 GB', '120 GB'], ['160 GB', '160 GB'], ['256 GB', '256 GB'], ['500 GB', '500 GB'], ['1tb', '1tb']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :brand_name, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:brand_name, options_for_select([['Dell', 'Dell'], ['HP', 'HP'], ['Acer', 'Acer']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <%= f.label :cpu_processor, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:cpu_processor, options_for_select([['Core 2 Duo', 'Core 2 Duo'], ['i3 Intel', 'i3 Intel'], ['i5 Intel', 'i5 Intel'], ['i7 Intel', 'i7 Intel']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ram, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:ram, options_for_select([['2 GB', '2 GB'], ['4 GB', '4 GB'], ['6 GB', '6 GB'], ['8 GB', '8 GB'], ['12 GB', '12 GB']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :cd_rom, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:cd_rom, options_for_select([['YES', 'YES'], ['NO', 'NO']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :usb_port, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:usb_port, options_for_select([['Opened', 'Opened'], ['Locked', 'Locked']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :vga_card, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.select(:vga_card, options_for_select([['YES', 'YES'], ['NO', 'NO']]), {}, {class: "form-control"}) %>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-5">
+          <%= f.submit "Create Employee", class: "btn btn-primary" %>
+          <%= link_to 'Cancel', employees_path, :class => "btn btn-danger" %>
+        </div>
+      </div>
+
+  <% end %>
+</div>

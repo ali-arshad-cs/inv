@@ -1,0 +1,8 @@
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: stock_hq
+  pool: 5
+  username: ali
+  password: 12345678
