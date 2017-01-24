@@ -1,4 +1,3 @@
-
 <% @employees = Employee.paginate(:page => params[:page]) %>
 
 <div class="panel panel-primary">
@@ -10,52 +9,101 @@
     <div class="row">
       <table class="table sortable">
         <thead>
-        <th><center>Name</center></th>
-        <th><center>ID</center></th>
-        <th><center>CPU CODE</center></th>
-        <th><center>Dept</center></th>
+        <th>
+          <center>Name</center>
+        </th>
+        <th>
+          <center>ID</center>
+        </th>
+        <th>
+          <center>CPU CODE</center>
+        </th>
+        <th>
+          <center>Dept</center>
+        </th>
 
-        <th><center>Ext</center></th>
+        <th>
+          <center>Ext</center>
+        </th>
 
 
+        <th>
+          <center>IP Phone</center>
+        </th>
+        <th>
+          <center>Headphone</center>
+        </th>
+        <th>
+          <center>LED</center>
+        </th>
 
-        <th><center>IP Phone</center></th>
-        <th><center>Headphone</center></th>
-        <th><center>LED </center></th>
 
+        <th>
+          <center>Keyboard</center>
+        </th>
+        <th>
+          <center>Mouse</center>
+        </th>
+        <th>
+          <center>VGA Card</center>
+        </th>
+        <th>
+          <center>Laptop</center>
+        </th>
 
-        <th><center>Keyboard</center></th>
-        <th><center>Mouse</center></th>
-        <th><center>VGA Card</center></th>
-        <th><center>Laptop</center></th>
-
-        <th class="sorttable_nosort"><center>Edit/Delete</center></th>
+        <th class="sorttable_nosort">
+          <center>Edit/Delete</center>
+        </th>
         </thead>
 
         <% @employees.order("employee_id ASC").each do |employee| %>
             <tr>
-              <td><center><%= link_to employee.name, employee %></td></center>
-              <td><center><%= employee.employee_id %></td></center>
-              <td><center><%= employee.cpu_code %></center></td>
-              <td><center><%= employee.department %></center></td>
+              <td>
+                <center><%= link_to employee.name, employee %></td>
+              </center>
+              <td>
+                <center><%= employee.employee_id %></td>
+              </center>
+              <td>
+                <center><%= employee.cpu_code %></center>
+              </td>
+              <td>
+                <center><%= employee.department %></center>
+              </td>
 
-              <td><center><%= employee.extension %></center></td>
-
-
-
-              <td><center><%= employee.ip_phone %></center></td>
-              <td><center><%= employee.headphone  %></center></td>
-              <td><center><%= employee.led %></center></td>
-
-
-              <td><center><%= employee.keyboard %></center></td>
-              <td><center><%= employee.mouse %></center></td>
-              <td><center><%= employee.vga_card  %></center></td>
-              <td><center><%= employee.laptop  %></center></td>
+              <td>
+                <center><%= employee.extension %></center>
+              </td>
 
 
+              <td>
+                <center><%= employee.ip_phone %></center>
+              </td>
+              <td>
+                <center><%= employee.headphone %></center>
+              </td>
+              <td>
+                <center><%= employee.led %></center>
+              </td>
 
-              <td><center><%= link_to '', edit_employee_path(employee), :class=>"fa fa-edit" %> |  <%= link_to content_tag(:i,nil, :class=>"fa fa-trash-o"), employee, data: {confirm: 'Are you sure you want to delete this item?'}, method: :delete %></center>
+
+              <td>
+                <center><%= employee.keyboard %></center>
+              </td>
+              <td>
+                <center><%= employee.mouse %></center>
+              </td>
+              <td>
+                <center><%= employee.vga_card %></center>
+              </td>
+              <td>
+                <center><%= employee.laptop %></center>
+              </td>
+
+
+              <td>
+                <center><%= link_to '', edit_employee_path(employee), :class => "fa fa-edit" %>
+                  |  <%= link_to content_tag(:i, nil, :class => "fa fa-trash-o"), employee, data: {confirm: 'Are you sure you want to delete this item?'}, method: :delete %></center>
               </td>
             </tr>
         <% end -%>
@@ -64,9 +112,13 @@
         <tr>
           <td><b>Total Employees</b></td>
           <td></td>
-          <td><center><%= @employees.count if @employees%></center></td>
+          <td>
+            <center><%= @employees.count if @employees %></center>
+          </td>
           <td></td>
-          <td><center><%#= number_to_currency(@employees.map{|item| item.value}.reduce(0, :+,))%></center></td>
+          <td>
+            <center><%#= number_to_currency(@employees.map{|item| item.value}.reduce(0, :+,))%></center>
+          </td>
           <td></td>
           <td></td>
           <td></td>
@@ -80,6 +132,72 @@
         </tfoot>
 
       </table>
+    </div>
+
+
+    <div class="container">
+      <h2>Total Summary</h2>
+      <p>The panel-group class clears the bottom-margin. Try to remove the class and see what happens.</p>
+      <div class="panel-group">
+
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading blue">Total Employees = <strong><%= Employee.count %></strong></div>
+              <div class="panel-body">Panel Content</div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading blue">Total CPU = <strong><%= Employee.where("cpu_code is NOT NULL").count %></strong></div>
+              <div class="panel-body">Panel Content</div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading blue">Total IP Phone =<strong> <%= Employee.where.not(ip_phone: 'No').count %></strong> </div>
+              <div class="panel-body">
+                Grandstream = <%= Employee.where(ip_phone: "GrandStream").count %><br>
+                D-Link = <%= Employee.where(ip_phone: "D-Link").count %>
+              </div>
+              <!--<div class="panel-body"> </div>-->
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading blue">Total Mouse = <strong><%= Employee.where("mouse is NOT NULL").count %></strong></div>
+              <div class="panel-body">IBM = <%= Employee.where(mouse: "IBM").count %>
+                <br>
+                Dell = <%= Employee.where(mouse: "Dell").count %></div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading blue">Total Keyboard = <strong> <%= Employee.where("keyboard is NOT NULL").count %></strong></div>
+              <div class="panel-body">IBM = <%= Employee.where(keyboard: "IBM").count %>
+              <br>
+                Dell = <%= Employee.where(keyboard: "Dell").count %>
+                <br>
+                HP = <%= Employee.where(keyboard: "HP").count %>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading blue">Total Headphone = <strong><%= Employee.where.not(headphone: 'No').count %></strong></div>
+              <div class="panel-body">A4Tech = <%= Employee.where(headphone: "A4Tech").count %>
+              <br>
+                Local = <%= Employee.where(headphone: "Local").count %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
     </div>
 
     <center>
