@@ -1,3 +1,14 @@
+<style>
+  .even
+  {
+    background: white;
+  }
+
+  .odd
+  {
+    background: #EEF7FB;
+  }
+</style>
 <% @employees = Employee.paginate(:page => params[:page]) %>
 
 <div class="panel panel-primary">
@@ -57,7 +68,7 @@
         </thead>
 
         <% @employees.order("employee_id ASC").each do |employee| %>
-            <tr>
+            <tr class="<%= cycle("even", "odd") %>">
               <td>
                 <center><%= link_to employee.name, employee %></td>
               </center>
@@ -110,15 +121,11 @@
 
         <tfoot>
         <tr>
-          <td><b>Total Employees</b></td>
           <td></td>
-          <td>
-            <center><%= @employees.count if @employees %></center>
-          </td>
           <td></td>
-          <td>
-            <center><%#= number_to_currency(@employees.map{|item| item.value}.reduce(0, :+,))%></center>
-          </td>
+          <td></td>
+          <td></td>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>
@@ -137,7 +144,7 @@
 
     <div class="container">
       <h2>Total Summary</h2>
-      <p>Summarized detail of all the inventory currently being used by these employees.</p>
+      <p>Summarized detail of all the inventory currently being used by the employees.</p><br>
       <div class="panel-group">
 
         <div class="row">
@@ -151,7 +158,8 @@
 
           <div class="col-xs-6 col-md-3">
             <div class="panel panel-default">
-              <div class="panel-heading blue">Total Headphone = <strong><%= Employee.where.not(headphone: 'No').count %></strong></div>
+              <div class="panel-heading blue">Total Headphone =
+                <strong><%= Employee.where.not(headphone: 'No').count %></strong></div>
               <div class="panel-body">A4Tech = <%= Employee.where(headphone: "A4Tech").count %>
                 <br>
                 Logitech = <%= Employee.where(headphone: "Logitech").count %>
@@ -162,14 +170,10 @@
           </div>
 
 
-
-
-
-
-
           <div class="col-xs-6 col-md-3">
             <div class="panel panel-default">
-              <div class="panel-heading blue">Total IP Phone =<strong> <%= Employee.where.not(ip_phone: 'No').count %></strong> </div>
+              <div class="panel-heading blue">Total IP Phone
+                =<strong> <%= Employee.where.not(ip_phone: 'No').count %></strong></div>
               <div class="panel-body">
                 Grandstream = <%= Employee.where(ip_phone: "GrandStream").count %><br>
                 D-Link = <%= Employee.where(ip_phone: "D-Link").count %>
@@ -199,25 +203,28 @@
           </div>
           <div class="col-xs-6 col-md-3">
             <div class="panel panel-default">
-              <div class="panel-heading blue">Total Mouse = <strong><%= Employee.where("mouse is NOT NULL").count %></strong></div>
+              <div class="panel-heading blue">Total Mouse =
+                <strong><%= Employee.where("mouse is NOT NULL").count %></strong></div>
               <div class="panel-body">IBM = <%= Employee.where(mouse: "IBM").count %>
                 <br>
                 Dell = <%= Employee.where(mouse: "Dell").count %>
-              <br>
-             Microsoft = <%= Employee.where(mouse: "Microsoft").count %>
-            <br>
-            Wyse = <%= Employee.where(mouse: "Wyse").count %>
-          <br>
-          Logitech = <%= Employee.where(mouse: "Logitech").count %>
+                <br>
+                Microsoft = <%= Employee.where(mouse: "Microsoft").count %>
+                <br>
+                Wyse = <%= Employee.where(mouse: "Wyse").count %>
+                <br>
+                Logitech = <%= Employee.where(mouse: "Logitech").count %>
                 <br>
                 Acer = <%= Employee.where(mouse: "Acer").count %>
+              </div>
             </div>
-          </div></div>
+          </div>
           <div class="col-xs-6 col-md-3">
             <div class="panel panel-default">
-              <div class="panel-heading blue">Total Keyboard = <strong> <%= Employee.where("keyboard is NOT NULL").count %></strong></div>
+              <div class="panel-heading blue">Total Keyboard =
+                <strong> <%= Employee.where("keyboard is NOT NULL").count %></strong></div>
               <div class="panel-body">IBM = <%= Employee.where(keyboard: "IBM").count %>
-              <br>
+                <br>
                 Dell = <%= Employee.where(keyboard: "Dell").count %>
                 <br>
                 HP = <%= Employee.where(keyboard: "HP").count %>
