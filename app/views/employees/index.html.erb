@@ -12,17 +12,23 @@
         <thead>
         <th><center>Name</center></th>
         <th><center>ID</center></th>
-        <th><center>Dept</center></th>
-        <th><center>Keyboard</center></th>
-        <th><center>Ext</center></th>
-        <th><center>LED </center></th>
         <th><center>CPU CODE</center></th>
-        <th><center>Mouse Pad</center></th>
+        <th><center>Dept</center></th>
+
+        <th><center>Ext</center></th>
+
+
+
         <th><center>IP Phone</center></th>
         <th><center>Headphone</center></th>
+        <th><center>LED </center></th>
+
+
+        <th><center>Keyboard</center></th>
+        <th><center>Mouse</center></th>
         <th><center>VGA Card</center></th>
         <th><center>Laptop</center></th>
-        <th><center>Camera</center></th>
+
         <th class="sorttable_nosort"><center>Edit/Delete</center></th>
         </thead>
 
@@ -30,17 +36,23 @@
             <tr>
               <td><center><%= link_to employee.name, employee %></td></center>
               <td><center><%= employee.employee_id %></td></center>
-              <td><center><%= employee.department %></center></td>
-              <td><center><%= employee.keyboard %></center></td>
-              <td><center><%= employee.extension %></center></td>
-              <td><center><%= employee.led %></center></td>
               <td><center><%= employee.cpu_code %></center></td>
-              <td><center><%= employee.mouse_pad %></center></td>
+              <td><center><%= employee.department %></center></td>
+
+              <td><center><%= employee.extension %></center></td>
+
+
+
               <td><center><%= employee.ip_phone %></center></td>
               <td><center><%= employee.headphone  %></center></td>
+              <td><center><%= employee.led %></center></td>
+
+
+              <td><center><%= employee.keyboard %></center></td>
+              <td><center><%= employee.mouse %></center></td>
               <td><center><%= employee.vga_card  %></center></td>
               <td><center><%= employee.laptop  %></center></td>
-              <td><center><%= employee.camera  %></center></td>
+
 
 
               <td><center><%= link_to '', edit_employee_path(employee), :class=>"fa fa-edit" %> |  <%= link_to content_tag(:i,nil, :class=>"fa fa-trash-o"), employee, data: {confirm: 'Are you sure you want to delete this item?'}, method: :delete %></center>

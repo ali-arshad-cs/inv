@@ -2,7 +2,7 @@ class EmployeesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @employees = Employee.all
+    @employees = Employee.all.order('employee_id ASC')
     #redirect_to @employee
   end
 
@@ -48,7 +48,7 @@ class EmployeesController < ApplicationController
   private
 
   def employee_params
-    params.require(:employee).permit(:name, :keyboard, :led, :cpu_code, :mouse_pad, :ip_phone, :headphone, :vga_card, :laptop, :camera, :employee_id, :description, :extension, :department)
+    params.require(:employee).permit(:name, :keyboard, :led, :cpu_code, :mouse_pad,:mouse, :ip_phone, :headphone, :vga_card, :laptop, :camera, :employee_id, :description, :extension, :department)
   end
 
 

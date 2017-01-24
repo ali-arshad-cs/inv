@@ -17,6 +17,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'rails_12factor'
 gem 'thin'
+gem 'awesome_print'
 
 # Gems used only for assets and not required
 # in production environments by default.

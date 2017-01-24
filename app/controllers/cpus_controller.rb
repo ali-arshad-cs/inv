@@ -3,7 +3,7 @@ class CpusController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @cpus = Cpu.all
+    @cpus = Cpu.all.order('cpu_code ASC')
   end
 
   def show
