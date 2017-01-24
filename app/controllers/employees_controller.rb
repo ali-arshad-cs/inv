@@ -3,7 +3,6 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.all.order('employee_id ASC')
-    #redirect_to @employee
   end
 
   def show

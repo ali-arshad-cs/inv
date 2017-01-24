@@ -32,7 +32,7 @@
         <th class="sorttable_nosort"><center>Edit/Delete</center></th>
         </thead>
 
-        <% @employees.each do |employee| %>
+        <% @employees.order("employee_id ASC").each do |employee| %>
             <tr>
               <td><center><%= link_to employee.name, employee %></td></center>
               <td><center><%= employee.employee_id %></td></center>
