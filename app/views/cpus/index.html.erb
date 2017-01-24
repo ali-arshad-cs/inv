@@ -175,7 +175,7 @@
               <div class="panel-heading blue">VGA Card
                 <strong></strong></div>
               <div class="panel-body">
-                Cards = <%= Cpu.where("vga_card is NOT NULL").count %>
+                Cards = <%= Cpu.where(vga_card: "YES").count %>
               </div>
             </div>
           </div>
