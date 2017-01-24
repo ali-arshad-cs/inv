@@ -58,14 +58,14 @@
       <div class="form-group">
         <%= f.label :mouse, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:mouse, options_for_select([['Dell', 'Dell'], ['HP', 'HP']]), {}, {class: "form-control"}) %>
+          <%= f.select(:mouse, options_for_select([['Dell', 'Dell'], ['HP', 'HP'],['Microsoft','Microsoft'],['Wyse','Wyse'],['Logitech','Logitech'],['acer','acer']]), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :keyboard, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:keyboard, options_for_select([['Dell', 'Dell'], ['HP', 'HP'],['IBM','IBM']]), {}, {class: "form-control"}) %>
+          <%= f.select(:keyboard, options_for_select([['Dell', 'Dell'], ['HP', 'HP'],['IBM','IBM'],['Acer','Acer']]), {}, {class: "form-control"}) %>
         </div>
       </div>
 
@@ -86,7 +86,7 @@
       <div class="form-group">
         <%= f.label :headphone, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:headphone, options_for_select([['No', 'No'], ['A4Tech', 'A4Tech'], ['Local', 'Local']]), {}, {class: "form-control"}) %>
+          <%= f.select(:headphone, options_for_select([['No', 'No'], ['A4Tech', 'A4Tech'],['Logitech','Logitech'], ['Local', 'Local']]), {}, {class: "form-control"}) %>
         </div>
       </div>
 

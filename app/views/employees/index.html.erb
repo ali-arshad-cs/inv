@@ -147,12 +147,26 @@
               <div class="panel-body">Panel Content</div>
             </div>
           </div>
+
+
           <div class="col-xs-6 col-md-3">
             <div class="panel panel-default">
-              <div class="panel-heading blue">Total CPU = <strong><%= Employee.where("cpu_code is NOT NULL").count %></strong></div>
-              <div class="panel-body">Panel Content</div>
+              <div class="panel-heading blue">Total Headphone = <strong><%= Employee.where.not(headphone: 'No').count %></strong></div>
+              <div class="panel-body">A4Tech = <%= Employee.where(headphone: "A4Tech").count %>
+                <br>
+                Logitech = <%= Employee.where(headphone: "Logitech").count %>
+                <br>
+                Local = <%= Employee.where(headphone: "Local").count %>
+              </div>
             </div>
           </div>
+
+
+
+
+
+
+
           <div class="col-xs-6 col-md-3">
             <div class="panel panel-default">
               <div class="panel-heading blue">Total IP Phone =<strong> <%= Employee.where.not(ip_phone: 'No').count %></strong> </div>
@@ -168,12 +182,37 @@
         <div class="row">
           <div class="col-xs-6 col-md-3">
             <div class="panel panel-default">
+              <div class="panel-heading blue">Total LED's = <strong>40</strong></div>
+              <div class="panel-body">Dell = <br>
+                HP = <br>
+                ACER = <br>
+                SonicView = <br>
+                Samsung = <br>
+                Asus = <br>
+                BenQ = <br>
+                EDGE10 = <br>
+                Lenovo = <br>
+                LG = <br>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <div class="panel panel-default">
               <div class="panel-heading blue">Total Mouse = <strong><%= Employee.where("mouse is NOT NULL").count %></strong></div>
               <div class="panel-body">IBM = <%= Employee.where(mouse: "IBM").count %>
                 <br>
-                Dell = <%= Employee.where(mouse: "Dell").count %></div>
+                Dell = <%= Employee.where(mouse: "Dell").count %>
+              <br>
+             Microsoft = <%= Employee.where(mouse: "Microsoft").count %>
+            <br>
+            Wyse = <%= Employee.where(mouse: "Wyse").count %>
+          <br>
+          Logitech = <%= Employee.where(mouse: "Logitech").count %>
+                <br>
+                Acer = <%= Employee.where(mouse: "Acer").count %>
             </div>
-          </div>
+          </div></div>
           <div class="col-xs-6 col-md-3">
             <div class="panel panel-default">
               <div class="panel-heading blue">Total Keyboard = <strong> <%= Employee.where("keyboard is NOT NULL").count %></strong></div>
@@ -182,18 +221,13 @@
                 Dell = <%= Employee.where(keyboard: "Dell").count %>
                 <br>
                 HP = <%= Employee.where(keyboard: "HP").count %>
+                <br>
+                Acer = <%= Employee.where(keyboard: "Acer").count %>
               </div>
             </div>
           </div>
-          <div class="col-xs-6 col-md-3">
-            <div class="panel panel-default">
-              <div class="panel-heading blue">Total Headphone = <strong><%= Employee.where.not(headphone: 'No').count %></strong></div>
-              <div class="panel-body">A4Tech = <%= Employee.where(headphone: "A4Tech").count %>
-              <br>
-                Local = <%= Employee.where(headphone: "Local").count %>
-              </div>
-            </div>
-          </div>
+
+
         </div>
 
 
