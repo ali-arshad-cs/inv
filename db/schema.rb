@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119193147) do
+ActiveRecord::Schema.define(version: 20170125132425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,30 @@ ActiveRecord::Schema.define(version: 20170119193147) do
     t.text     "description"
     t.integer  "extension"
     t.text     "department"
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string   "led"
+    t.string   "cpu"
+    t.string   "keyboard"
+    t.string   "mouse"
+    t.string   "vga_cable"
+    t.string   "vga_card"
+    t.string   "power_cable"
+    t.string   "port_switch"
+    t.string   "headphone"
+    t.string   "cisco_switch"
+    t.string   "usb"
+    t.string   "ip_phone"
+    t.string   "firewall"
+    t.string   "cable_tester"
+    t.string   "ram"
+    t.string   "harddisk"
+    t.string   "mouse_pad"
+    t.string   "laptop"
+    t.string   "cable_cutter"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "items", force: :cascade do |t|

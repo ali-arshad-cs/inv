@@ -1,0 +1,223 @@
+<style>
+  .even {
+    background: white;
+  }
+
+  .odd {
+    background: #EEF7FB;
+  }
+</style>
+<% @equipments = Equipment.paginate(:page => params[:page]) %>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Purchase Details</h3>
+  </div>
+
+  <div class="panel-body">
+    <div class="row">
+      <table class="table sortable">
+        <thead>
+        <th style="padding-left: 50px !important;">
+          <center>Date</center>
+        </th>
+        <th>
+          <center>Led</center>
+        </th>
+        <th>
+          <center>Cpu</center>
+        </th>
+        <th>
+          <center>Keyboard</center>
+        </th>
+        <th>
+          <center>Mouse</center>
+        </th>
+        <th>
+          <center>Vga Cable</center>
+        </th>
+        <th>
+          <center>Vga Card</center>
+        </th>
+        <th>
+          <center>Power Cable</center>
+        </th>
+        <th>
+          <center>Port Switch</center>
+        </th>
+        <th>
+          <center>Headphone</center>
+        </th>
+        <th>
+          <center>Cisco Switch</center>
+        </th>
+        <th>
+          <center>USB</center>
+        </th>
+        <th>
+          <center>IP Phone</center>
+        </th>
+        <th>
+          <center>Firewall</center>
+        </th>
+        <th>
+          <center>Cable Tester</center>
+        </th>
+        <th>
+          <center>RAM</center>
+        </th>
+        <th>
+          <center>Harddisk</center>
+        </th>
+
+        <th style="padding-left: 50px !important;"><center>Edit/Del</center></th>
+
+
+
+
+        </thead>
+
+        <% @equipments.each do |equipment| %>
+            <tr class="<%= cycle("even", "odd") %>">
+              <td>
+                <center>
+                  <%= link_to equipment.created_at.strftime("%m-%d-%Y"), equipment %>
+                </center>
+              </td>
+
+              <td>
+                <center>
+                  <%= equipment.led %>
+                </center>
+              </td>
+
+              <td>
+                <center>
+                  <%= equipment.cpu %>
+                </center>
+              </td>
+
+              <td>
+                <center>
+                  <%= equipment.keyboard %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.mouse %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.vga_cable %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.vga_card %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.power_cable %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.port_switch %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.headphone %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.cisco_switch %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.usb %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.ip_phone %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.firewall %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.cable_tester %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.ram %>
+                </center>
+              </td>
+              <td>
+                <center>
+                  <%= equipment.harddisk %>
+                </center>
+              </td>
+
+
+
+
+
+
+              <td>
+                <center><%= link_to '', edit_equipment_path(equipment), :class => "fa fa-edit" %>
+                  |  <%= link_to content_tag(:i, nil, :class => "fa fa-trash-o"), equipment, data: {confirm: 'Are you sure you want to delete this item?'}, method: :delete %></center>
+              </td>
+            </tr>
+        <% end -%>
+
+        <tfoot>
+        <tr>
+
+
+
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        </tfoot>
+
+      </table>
+    </div>
+
+
+    <center>
+      <div class="pagination">
+        <div class="page_info">
+          <%= page_entries_info @equipments %>
+        </div>
+        <%= will_paginate @equipments, renderer: BootstrapPagination::Rails %>
+      </div>
+    </center>
+
+  </div>
+</div>

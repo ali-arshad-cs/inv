@@ -7,4 +7,8 @@ Rims::Application.routes.draw do
   resources :users
   resources :employees
   resources :cpus
+  resources :equipment
+
+
+
 end

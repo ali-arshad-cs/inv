@@ -50,6 +50,15 @@
             </ul>
           </li>
         </ul>
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color: white !important;">Purchased Date<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to 'List', equipment_index_path %></li>
+              <li><%= link_to 'New Purchase', new_equipment_path %></li>
+            </ul>
+          </li>
+        </ul>
     <% end %>
 
     <ul class="nav navbar-nav navbar-right">

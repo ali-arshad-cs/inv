@@ -1,0 +1,147 @@
+<div class="form-horizontal">
+  <%= form_for(@equipment) do |f| %>
+      <% if @equipment.errors.any? %>
+          <div id="error_explanation">
+            <h3><%= pluralize(@equipment.errors.count, "error") %> prohibited this item from being saved:</h3>
+
+            <ul>
+              <% @equipment.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+
+      <div class="form-group">
+        <%= f.label :led, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :led, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :cpu, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.number_field :cpu, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :keyboard, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.number_field :keyboard, class: "form-control" %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :mouse, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :mouse, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :vga_cable, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :vga_cable, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :port_switch, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :port_switch, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :power_cable, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :power_cable, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :headphone, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :headphone, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :cisco_switch, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :cisco_switch, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :usb, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :usb, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :ip_phone, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :ip_phone, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :firewall, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :firewall, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :cable_tester, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :cable_tester, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ram, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :ram, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :harddisk, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :harddisk, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :mouse_pad, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :mouse_pad, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :laptop, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :laptop, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :cable_cutter, class: "col-sm-3 control-label" %>
+        <div class="col-sm-5">
+          <%= f.text_field :cable_cutter, class: "form-control" %>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-5">
+          <%= f.submit "Create Equipment", class: "btn btn-primary" %>
+          <%#= link_to 'Cancel', equipments_path, :class => "btn btn-danger" %>
+        </div>
+      </div>
+
+  <% end %>
+</div>

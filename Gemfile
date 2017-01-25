@@ -18,6 +18,7 @@ gem 'will_paginate-bootstrap'
 gem 'rails_12factor'
 gem 'thin'
 gem 'awesome_print'
+gem 'better'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,6 +31,7 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem "better_errors"
 
 end
 

@@ -1,0 +1,146 @@
+<style>
+  hr {
+    margin-top: 5px !important;
+  }
+</style>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1><%= @equipment.created_at.strftime("%d-%m-%Y") %></h1>
+  </div>
+
+  <div class="panel-body">
+
+    <div class="container">
+
+
+      <div class="row">
+        <div class="col-md-2"><b>LED</b></div>
+        <div class="col-md-4"><%= @equipment.led %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>CPU</b></div>
+        <div class="col-md-4"><%= @equipment.cpu %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Keyboard</b></div>
+        <div class="col-md-4"><%= @equipment.keyboard %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Mouse</b></div>
+        <div class="col-md-4"><%= @equipment.mouse %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>VGA Cable</b></div>
+        <div class="col-md-4"><%= @equipment.vga_cable %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>VGA Card</b></div>
+        <div class="col-md-4"><%= @equipment.vga_card %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Power Cable</b></div>
+        <div class="col-md-4"><%= @equipment.power_cable %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Port Switch</b></div>
+        <div class="col-md-4"><%= @equipment.port_switch %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>HeadPhone</b></div>
+        <div class="col-md-4"><%= @equipment.headphone %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Cisco Switch</b></div>
+        <div class="col-md-4"><%= @equipment.cisco_switch %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>USB</b></div>
+        <div class="col-md-4"><%= @equipment.usb %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Ip Phone</b></div>
+        <div class="col-md-4"><%= @equipment.ip_phone %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Firewall</b></div>
+        <div class="col-md-4"><%= @equipment.firewall %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Firewall</b></div>
+        <div class="col-md-4"><%= @equipment.firewall %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Cable Tester</b></div>
+        <div class="col-md-4"><%= @equipment.cable_tester %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>RAM</b></div>
+        <div class="col-md-4"><%= @equipment.ram %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Harddisk</b></div>
+        <div class="col-md-4"><%= @equipment.harddisk %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Mouse Pad</b></div>
+        <div class="col-md-4"><%= @equipment.mouse_pad %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Laptop</b></div>
+        <div class="col-md-4"><%= @equipment.laptop %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Cable Cutter</b></div>
+        <div class="col-md-4"><%= @equipment.cable_cutter %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Updated At</b></div>
+        <div class="col-md-4"><%= @equipment.updated_at.strftime("%m-%d-%Y") %></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-2"><b>Created At</b></div>
+        <div class="col-md-4"><%= @equipment.created_at.strftime("%m-%d-%Y") %></div>
+      </div>
+
+
+
+      <!--<div class="row">-->
+        <!--<div class="col-md-2"><b>Description</b></div>-->
+        <!--<div class="col-md-8"><%#= simple_format(@equipment.description) %></div>-->
+      <!--</div>-->
+
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <%= link_to 'Edit', edit_equipment_path(@equipment), :class => "btn btn-primary" %>
+          <%= link_to 'Delete', @equipment, confirm: 'Are you sure?', method: :delete, :class => "btn btn-warning" %>
+          <%= link_to 'Cancel', equipment_path, :class => "btn btn-danger" %>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
