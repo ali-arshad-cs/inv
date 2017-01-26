@@ -22,50 +22,49 @@
       <div class="form-group">
         <%= f.label :harddisk, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:harddisk, options_for_select([['40 GB', '40 GB'],['60 GB','60 GB'], ['80 GB', '80 GB'], ['120 GB', '120 GB'], ['160 GB', '160 GB'], ['256 GB', '256 GB'], ['500 GB', '500 GB'], ['1tb', '1tb']]), {}, {class: "form-control"}) %>
+          <%= f.select(:harddisk, options_for_select([['40 GB', '40 GB'],['60 GB','60 GB'], ['80 GB', '80 GB'], ['120 GB', '120 GB'], ['160 GB', '160 GB'], ['256 GB', '256 GB'], ['500 GB', '500 GB'], ['1tb', '1tb']], :selected => f.object.harddisk), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :brand_name, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:brand_name, options_for_select([['Dell', 'Dell'],['Transource','Transource'], ['Think Centre','Think Centre'],['HP', 'HP'], ['Acer', 'Acer'],['Work Station','Work Station']]), {}, {class: "form-control"}) %>
+          <%= f.select(:brand_name, options_for_select([['Dell', 'Dell'],['Transource','Transource'], ['Think Centre','Think Centre'],['HP', 'HP'], ['Acer', 'Acer'],['Work Station','Work Station']], :selected => f.object.brand_name), {}, {class: "form-control"}) %>
         </div>
       </div>
-
 
       <div class="form-group">
         <%= f.label :cpu_processor, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:cpu_processor, options_for_select([['Core 2 Duo', 'Core 2 Duo'],['Core 2 Quad','Core 2 Quad'],['i3 Intel', 'i3 Intel'], ['i5 Intel', 'i5 Intel'], ['i7 Intel', 'i7 Intel']]), {}, {class: "form-control"}) %>
+          <%= f.select(:cpu_processor, options_for_select([['Core 2 Duo', 'Core 2 Duo'],['Core 2 Quad','Core 2 Quad'],['i3 Intel', 'i3 Intel'], ['i5 Intel', 'i5 Intel'], ['i7 Intel', 'i7 Intel']], :selected => f.object.cpu_processor), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :ram, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:ram, options_for_select([['2 GB', '2 GB'],['3 GB','3 GB'], ['4 GB', '4 GB'],['5 GB','5 GB'], ['6 GB', '6 GB'], ['8 GB', '8 GB'],['10 GB', '10 GB'], ['12 GB', '12 GB']]), {}, {class: "form-control"}) %>
+          <%= f.select(:ram, options_for_select([['2 GB', '2 GB'],['3 GB','3 GB'], ['4 GB', '4 GB'],['5 GB','5 GB'], ['6 GB', '6 GB'], ['8 GB', '8 GB'],['10 GB', '10 GB'], ['12 GB', '12 GB']], :selected => f.object.ram), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :cd_rom, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:cd_rom, options_for_select([['YES', 'YES'], ['NO', 'NO']]), {}, {class: "form-control"}) %>
+          <%= f.select(:cd_rom, options_for_select([['YES', 'YES'], ['NO', 'NO']], :selected => f.object.cd_rom), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :usb_port, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:usb_port, options_for_select([['Opened', 'Opened'], ['Locked', 'Locked']]), {}, {class: "form-control"}) %>
+          <%= f.select(:usb_port, options_for_select([['Opened', 'Opened'], ['Locked', 'Locked']], :selected => f.object.usb_port), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :vga_card, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:vga_card, options_for_select([['YES', 'YES'], ['NO', 'NO']]), {}, {class: "form-control"}) %>
+          <%= f.select(:vga_card, options_for_select([['YES', 'YES'], ['NO', 'NO']], :selected => f.object.vga_card), {}, {class: "form-control"}) %>
         </div>
       </div>
 

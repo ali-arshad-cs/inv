@@ -33,7 +33,6 @@
         </div>
       </div>
 
-
       <div class="form-group">
         <%= f.label :led, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
@@ -51,63 +50,63 @@
       <div class="form-group">
         <%= f.label :department, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:department, options_for_select([['IT', 'IT'], ['Hedis', 'Hedis'],['Billing','Billing'],['ECL','ECL'],['QC','QC'],['Marketing','Marketing'],['Credentialing','Credentialing'],['Finance','Finance'],['HR','HR']]), {}, {class: "form-control"}) %>
+          <%= f.select(:department, options_for_select([['IT', 'IT'], ['Hedis', 'Hedis'],['Billing','Billing'],['ECL','ECL'],['QC','QC'],['Marketing','Marketing'],['Credentialing','Credentialing'],['Finance','Finance'],['HR','HR']], :selected => f.object.department), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :mouse, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:mouse, options_for_select([['Dell', 'Dell'], ['HP', 'HP'],['Microsoft','Microsoft'],['Wyse','Wyse'],['Logitech','Logitech'],['acer','acer']]), {}, {class: "form-control"}) %>
+          <%= f.select(:mouse, options_for_select([['Dell', 'Dell'], ['HP', 'HP'],['Microsoft','Microsoft'],['Wyse','Wyse'],['Logitech','Logitech'],['acer','acer']], :selected => f.object.mouse), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :keyboard, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:keyboard, options_for_select([['Dell', 'Dell'], ['HP', 'HP'],['IBM','IBM'],['Acer','Acer']]), {}, {class: "form-control"}) %>
+          <%= f.select(:keyboard, options_for_select([['Dell', 'Dell'], ['HP', 'HP'],['IBM','IBM'],['Acer','Acer']], :selected => f.object.keyboard), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :mouse_pad, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:mouse_pad, options_for_select([['No', 'No'], ['Yes', 'Yes']]), {}, {class: "form-control"}) %>
+          <%= f.select(:mouse_pad, options_for_select([['No', 'No'], ['Yes', 'Yes']], :selected => f.object.mouse_pad), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :ip_phone, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:ip_phone, options_for_select([['No', 'No'], ['GrandStream', 'GrandStream'], ['NEC', 'NEC'], ['D-Link', 'D-Link']]), {}, {class: "form-control"}) %>
+          <%= f.select(:ip_phone, options_for_select([['No', 'No'], ['GrandStream', 'GrandStream'], ['NEC', 'NEC'], ['D-Link', 'D-Link']], :selected => f.object.ip_phone), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :headphone, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:headphone, options_for_select([['No', 'No'], ['A4Tech', 'A4Tech'],['Logitech','Logitech'], ['Local', 'Local']]), {}, {class: "form-control"}) %>
+          <%= f.select(:headphone, options_for_select([['No', 'No'], ['A4Tech', 'A4Tech'],['Logitech','Logitech'], ['Local', 'Local']], :selected => f.object.headphone), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :vga_card, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:vga_card, options_for_select([['No', 'No'], ['Yes', 'Yes']]), {}, {class: "form-control"}) %>
+          <%= f.select(:vga_card, options_for_select([['No', 'No'], ['Yes', 'Yes']], :selected => f.object.vga_card), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :laptop, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:laptop, options_for_select([['No', 'No'],['HP', 'HP'], ['ACER', 'ACER'], ['TOSHIBA', 'TOSHIBA'], ['ACER', 'ACER']]), {}, {class: "form-control"}) %>
+          <%= f.select(:laptop, options_for_select([['No', 'No'],['HP', 'HP'], ['ACER', 'ACER'], ['TOSHIBA', 'TOSHIBA'], ['ACER', 'ACER']], :selected => f.object.laptop), {}, {class: "form-control"}) %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :camera, class: "col-sm-3 control-label" %>
         <div class="col-sm-5">
-          <%= f.select(:camera, options_for_select([['No', 'No'], ['Yes', 'Yes']]), {}, {class: "form-control"}) %>
+          <%= f.select(:camera, options_for_select([['No', 'No'], ['Yes', 'Yes']], :selected => f.object.camera), {}, {class: "form-control"}) %>
         </div>
       </div>
 
