@@ -18,3 +18,7 @@
 coverage/
 
 public/uploads/tmp/
+spec
+.idea/vcs.xml
+latest.dump
+.idea/workspace.xml

@@ -2,8 +2,9 @@ class EmployeesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @employees = Employee.all.order('employee_id ASC')
+    @employees = Employee.all
   end
+
 
   def show
     @employee = Employee.find(params[:id])

@@ -2,46 +2,50 @@
   <h2>Total Summary of Current Inventory</h2>
   <p>Summarized detail of all the inventory currently being used by the employees.</p><br>
   <div class="panel-group">
-
     <div class="row">
-
       <div class="col-xs-6 col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading blue">Total Ram's = <strong><%= Cpu.where("ram is NOT NULL").count %></strong></div>
-          <div class="panel-body">2 GB = <%= Cpu.where(ram: "2 GB").count%> <br>
-            3 GB = <%= Cpu.where(ram: "3 GB").count%> <br>
-            4 GB = <%= Cpu.where(ram: "4 GB").count%> <br>
-            6 GB = <%= Cpu.where(ram: "6 GB").count%> <br>
-            8 GB = <%= Cpu.where(ram: "8 GB").count%> <br>
-            10 GB = <%= Cpu.where(ram: "10 GB").count%>
-
-
+          <div class="panel-body">2 GB = <%= Cpu.where(ram: "2 GB").count %> <br>
+            3 GB = <%= Cpu.where(ram: "3 GB").count %> <br>
+            4 GB = <%= Cpu.where(ram: "4 GB").count %> <br>
+            6 GB = <%= Cpu.where(ram: "6 GB").count %> <br>
+            8 GB = <%= Cpu.where(ram: "8 GB").count %> <br>
+            10 GB = <%= Cpu.where(ram: "10 GB").count %>
           </div>
         </div>
       </div>
 
-
       <div class="col-xs-6 col-md-3">
         <div class="panel panel-default">
-          <div class="panel-heading blue">Total Employees = <strong><%= Employee.count %></strong></div>
-          <div class="panel-body">Panel Content</div>
+          <div class="panel-heading blue">
+            Total Employees = <strong><%= Employee.count %></strong>
+          </div>
+          <div class="panel-body">
+            Billing = <%= Employee.where(department: "Billing").count %><br>
+            Credentialing = <%= Employee.where(department: "Credentialing").count %><br>
+            Hedis = <%= Employee.where(department: "Hedis").count %><br>
+            IT = <%= Employee.where(department: "IT").count %><br>
+            Finance = <%= Employee.where(department: "Finance").count %><br>
+            ECL = <%= Employee.where(department: "ECL").count %><br>
+            QC = <%= Employee.where(department: "QC").count %><br>
+            Marketing = <%= Employee.where(department: "Marketing").count %><br>
+            HR = <%= Employee.where(department: "HR").count %>
+          </div>
         </div>
       </div>
-
 
       <div class="col-xs-6 col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading blue">Total Headphone =
             <strong><%= Employee.where.not(headphone: 'No').count %></strong></div>
-          <div class="panel-body">A4Tech = <%= Employee.where(headphone: "A4Tech").count %>
-            <br>
-            Logitech = <%= Employee.where(headphone: "Logitech").count %>
-            <br>
+          <div class="panel-body">
+            A4Tech = <%= Employee.where(headphone: "A4Tech").count %><br>
+            Logitech = <%= Employee.where(headphone: "Logitech").count %><br>
             Local = <%= Employee.where(headphone: "Local").count %>
           </div>
         </div>
       </div>
-
 
       <div class="col-xs-6 col-md-3">
         <div class="panel panel-default">
@@ -56,116 +60,92 @@
       </div>
     </div>
     <br>
-    <div class="row">
 
+    <div class="row">
       <div class="col-xs-6 col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading blue">Total Mouse =
             <strong><%= Employee.where("mouse is NOT NULL").count %></strong></div>
-          <div class="panel-body">IBM = <%= Employee.where(mouse: "IBM").count %>
-            <br>
-            Dell = <%= Employee.where(mouse: "Dell").count %>
-            <br>
-            Microsoft = <%= Employee.where(mouse: "Microsoft").count %>
-            <br>
-            Wyse = <%= Employee.where(mouse: "Wyse").count %>
-            <br>
-            Logitech = <%= Employee.where(mouse: "Logitech").count %>
-            <br>
+          <div class="panel-body">
+            IBM = <%= Employee.where(mouse: "IBM").count %><br>
+            Dell = <%= Employee.where(mouse: "Dell").count %><br>
+            Microsoft = <%= Employee.where(mouse: "Microsoft").count %><br>
+            Wyse = <%= Employee.where(mouse: "Wyse").count %><br>
+            Logitech = <%= Employee.where(mouse: "Logitech").count %><br>
             Acer = <%= Employee.where(mouse: "Acer").count %>
           </div>
         </div>
       </div>
+
       <div class="col-xs-6 col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading blue">Total Keyboard =
             <strong> <%= Employee.where("keyboard is NOT NULL").count %></strong></div>
-          <div class="panel-body">IBM = <%= Employee.where(keyboard: "IBM").count %>
-            <br>
-            Dell = <%= Employee.where(keyboard: "Dell").count %>
-            <br>
-            HP = <%= Employee.where(keyboard: "HP").count %>
-            <br>
+          <div class="panel-body">
+            IBM = <%= Employee.where(keyboard: "IBM").count %><br>
+            Dell = <%= Employee.where(keyboard: "Dell").count %><br>
+            HP = <%= Employee.where(keyboard: "HP").count %><br>
             Acer = <%= Employee.where(keyboard: "Acer").count %>
           </div>
         </div>
       </div>
+
       <div class="col-xs-6 col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading blue">Hard Disk =
             <strong><%= Cpu.where("harddisk is NOT NULL").count %></strong></div>
-          <div class="panel-body">80 GB  = <%= Cpu.where(harddisk: "80 GB").count %>
-            <br>
-            160 GB  = <%= Cpu.where(harddisk: "160 GB").count %>
-            <br>
-            256 GB  = <%= Cpu.where(harddisk: "256 GB").count %>
-            <br>
-            512 GB  = <%= Cpu.where(harddisk: "512 GB").count %>
+          <div class="panel-body">80 GB = <%= Cpu.where(harddisk: "80 GB").count %><br>
+            160 GB = <%= Cpu.where(harddisk: "160 GB").count %><br>
+            256 GB = <%= Cpu.where(harddisk: "256 GB").count %><br>
+            512 GB = <%= Cpu.where(harddisk: "512 GB").count %>
           </div>
         </div>
       </div>
-
 
       <div class="col-xs-6 col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading blue">Total CPU
             =<strong> <%= Cpu.where("cpu_processor is NOT NULL").count %></strong></div>
           <div class="panel-body">
-
             Core 2 Duo = <%= Cpu.where(cpu_processor: "Core 2 Duo").count %><br>
             Core 2 Quad = <%= Cpu.where(cpu_processor: "Core 2 Quad").count %><br>
             i3 Intel = <%= Cpu.where(cpu_processor: "i3 Intel").count %><br>
             i5 Intel = <%= Cpu.where(cpu_processor: "i5 Intel").count %><br>
             i7 Intel = <%= Cpu.where(cpu_processor: "i7 Intel").count %><br>
-
           </div>
-          <!--<div class="panel-body"> </div>-->
         </div>
       </div>
-
-
     </div>
-
-
   </div>
 </div>
-
-
-
 <div class="container">
-
-
   <div class="panel-group">
-
     <div class="row">
-
       <div class="col-xs-6 col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading blue">Total LED's = <strong>40</strong></div>
           <div class="panel-body">Dell = <br>
-            HP = <br>
-            ACER = <br>
-            SonicView = <br>
-            Samsung = <br>
-            Asus = <br>
-            BenQ = <br>
-            EDGE10 = <br>
-            Lenovo = <br>
-            LG = <br>
+            HP = 10<br>
+            ACER = 20<br>
+            SonicView = 10<br>
+            Samsung = 15<br>
+            Asus = 10<br>
+            BenQ = 5<br>
+            EDGE10 = 2<br>
+            Lenovo = 8<br>
+            LG = 10<br>
           </div>
         </div>
       </div>
-
-
       <div class="col-xs-6 col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading blue">Total CPU Brands = <strong><%= Cpu.count %></strong></div>
-          <div class="panel-body">Dell = <%= Cpu.where(brand_name: "Dell").count%> <br>
-            Transource = <%= Cpu.where(brand_name: "Transource").count%> <br>
-            Thinkcentre = <%= Cpu.where(brand_name: "Think Centre").count%> <br>
-            HP = <%= Cpu.where(brand_name: "HP").count%> <br>
-            Acer = <%= Cpu.where(brand_name: "Acer").count%> <br>
-            WorkStation = <%= Cpu.where(brand_name: "Work Station").count%> <br>
+          <div class="panel-body">Dell = <%= Cpu.where(brand_name: "Dell").count %> <br>
+            Transource = <%= Cpu.where(brand_name: "Transource").count %> <br>
+            Thinkcentre = <%= Cpu.where(brand_name: "Think Centre").count %> <br>
+            HP = <%= Cpu.where(brand_name: "HP").count %> <br>
+            Acer = <%= Cpu.where(brand_name: "Acer").count %> <br>
+            WorkStation = <%= Cpu.where(brand_name: "Work Station").count %> <br>
           </div>
         </div>
       </div>
@@ -179,19 +159,9 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
     <br>
     <div class="row">
-
-
-
-
-
     </div>
-
-
   </div>
 </div>
