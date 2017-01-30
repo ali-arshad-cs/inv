@@ -68,6 +68,7 @@
             <strong><%= Employee.where("mouse is NOT NULL").count %></strong></div>
           <div class="panel-body">
             IBM = <%= Employee.where(mouse: "IBM").count %><br>
+            HP = <%= Employee.where(mouse: "HP").count %><br>
             Dell = <%= Employee.where(mouse: "Dell").count %><br>
             Microsoft = <%= Employee.where(mouse: "Microsoft").count %><br>
             Wyse = <%= Employee.where(mouse: "Wyse").count %><br>
