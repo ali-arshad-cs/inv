@@ -13,8 +13,8 @@ gem 'pundit'
 gem 'rails'
 gem "seed_dump"
 gem 'twitter-bootstrap-rails'
-gem 'will_paginate', '~> 3.0'
-gem 'will_paginate-bootstrap'
+
+
 gem 'rails_12factor'
 gem 'thin'
 gem 'awesome_print'

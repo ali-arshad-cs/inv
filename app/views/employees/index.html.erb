@@ -7,7 +7,6 @@
     background: #EEF7FB;
   }
 </style>
-<% @employees = Employee.paginate(:page => params[:page]) %>
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">Employee Details</h3>
@@ -187,13 +186,6 @@
         </div>
       </div>
     </div>
-    <center>
-      <div class="pagination">
-        <div class="page_info">
-          <%= page_entries_info @employees %>
-        </div>
-        <%= will_paginate @employees, renderer: BootstrapPagination::Rails %>
-      </div>
-    </center>
+
   </div>
 </div>

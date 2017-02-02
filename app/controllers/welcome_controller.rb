@@ -9,4 +9,5 @@ class WelcomeController < ApplicationController
   def summary
 
   end
+
 end
